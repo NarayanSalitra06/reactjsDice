@@ -1,0 +1,17 @@
+.centercontainer{
+margin: 0 auto;
+display: flex;
+ align-items: center;
+height: 100vh;
+max-width: 900px;
+
+}
+
+
+.h1container{
+    font-style: bold
+}
+.h1{
+    font-size: 100px;
+}
+

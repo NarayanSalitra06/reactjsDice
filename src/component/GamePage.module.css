@@ -1,0 +1,29 @@
+.button{
+    margin: 5px;
+}
+.headcontainer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+
+}
+.maincontainer{
+    
+    margin: 0 auto;
+    max-width: 900px;
+    align-items: center;
+    height: 100vh;
+    
+}
+.rotatingDice{
+    
+    margin-top: 300px;
+}
+.buttongamepage{
+    margin: 20px;
+    
+}
+.buttomplaygameandrule{
+    margin-top: 10px;
+}
