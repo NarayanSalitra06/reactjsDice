@@ -3,10 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import RoleDice from "./RoleDice";
 import SelectButton from "./SelectButton";
 import ScoreButton from "./ScoreButton";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import GameRule from "./GameRule";
+import { AllClaculatin } from "../store/Calculation";
 
-const GamePage = ({ onselcteButton, score, handleReset, RamdonNum }) => {
+const GamePage = () => {
+  const { handleReset } = useContext(AllClaculatin);
   const [showRule, setShowRule] = useState(false);
   const handleShorRule = () => {
     setShowRule((pre) => !pre);
@@ -18,16 +20,16 @@ const GamePage = ({ onselcteButton, score, handleReset, RamdonNum }) => {
         <div>
           <div className={css.headcontainer}>
             <div>
-              <ScoreButton score={score}></ScoreButton>
+              <ScoreButton></ScoreButton>
             </div>
             <div>
               <div className="buttenContainer">
-                <SelectButton sectedbuttom={onselcteButton}></SelectButton>
+                <SelectButton></SelectButton>
               </div>
             </div>
           </div>
           <center className={css.rotatingDice}>
-            <RoleDice RamdonNum={RamdonNum}></RoleDice>
+            <RoleDice></RoleDice>
           </center>
           <center className={css.buttongamepage}>
             <div className={css.buttomplaygameandrule}>

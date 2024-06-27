@@ -1,7 +1,8 @@
-import { useState } from "react";
-import GamePage from "./GamePage";
+import { createContext, useState } from "react";
 
-const Calculation = () => {
+export const AllClaculatin = createContext([]);
+
+const Calculation = ({ children }) => {
   const [userscore, setUserScore] = useState(1);
 
   const RamdonNum = Math.floor(Math.random() * 6) + 1;
@@ -22,12 +23,16 @@ const Calculation = () => {
   };
 
   return (
-    <GamePage
-      onselcteButton={onselcteButton}
-      RamdonNum={RamdonNum}
-      score={score}
-      handleReset={handleReset}
-    />
+    <AllClaculatin.Provider
+      value={{
+        onselcteButton,
+        RamdonNum,
+        score,
+        handleReset,
+      }}
+    >
+      {children}
+    </AllClaculatin.Provider>
   );
 };
 export default Calculation;

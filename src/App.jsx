@@ -2,7 +2,9 @@ import { useState } from "react";
 import "./App.css";
 
 import Start from "./component/Start";
-import Calculation from "./component/Calculation";
+
+import GamePage from "./component/GamePage";
+import Calculation, { AllClaculatin } from "./store/Calculation";
 
 function App() {
   const [isGameStarted, setIsGameStarted] = useState(false);
@@ -10,7 +12,13 @@ function App() {
   const state = () => {
     setIsGameStarted((pre) => !pre);
   };
-  return <>{isGameStarted ? <Calculation /> : <Start state={state}></Start>}</>;
+  return (
+    <>
+      <Calculation>
+        {isGameStarted ? <GamePage /> : <Start state={state}></Start>}
+      </Calculation>
+    </>
+  );
 }
 
 export default App;
